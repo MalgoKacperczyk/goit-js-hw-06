@@ -7,8 +7,14 @@ function handleSubmit(event) {
   event.preventDefault();
   const { email, password } = event.currentTarget.elements;
   if (email.value === "" || password.value === "") {
-    return alert("Wypełnij wszystkie pola");
+    alert("Wypełnij wszystkie pola");
+  } else {
+    const elements = {
+      email: email.value,
+      password: password.value,
+    };
+
+    event.currentTarget.reset();
+    console.log(elements);
   }
-  event.currentTarget.reset();
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
 }
