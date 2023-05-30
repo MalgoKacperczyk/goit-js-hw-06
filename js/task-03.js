@@ -13,14 +13,25 @@ const images = [
   },
 ];
 
-const imagesList = document.querySelector("ul.gallery");
+const gallery = document.querySelector(".gallery");
 
-let galleryHTML = "";
+const galleryItem = images
+  .map(
+    (image) =>
+      `<li>
+  <img src="${image.url}" alt="${image.alt}">
+  </li>`
+  )
+  .join("");
+gallery.insertAdjacentHTML("beforeend", galleryItem);
 
-images.forEach(function (image) {
-  const imageHTML = `<li><img src="${image.url}" alt="${image.alt}"></li>`;
-  galleryHTML += imageHTML;
-});
-imagesList.insertAdjacentHTML("beforeend", galleryHTML);
+//const gallery = document.querySelector(".gallery");
+//let galleryHTML = "";
 
-console.log(imagesList);
+//images.forEach(function (image) {
+//const imageHTML = `<li><img src="${image.url}" alt="${image.alt}"></li>`;
+//galleryHTML += imageHTML;
+//});
+//imagesList.insertAdjacentHTML("beforeend", galleryHTML);
+
+//console.log(imagesList);
