@@ -1,4 +1,4 @@
-const validationInput = document.getElementById("validation-input");
+const validationInput = document.querySelector("#validation-input");
 const expectedLength = parseInt(validationInput.getAttribute("data-length"));
 
 function checkLength() {
